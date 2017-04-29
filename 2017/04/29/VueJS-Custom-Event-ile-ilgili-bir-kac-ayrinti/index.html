@@ -6,21 +6,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hexo">
-    <title>Hello World - Hexo</title>
+    <title>VueJS 2 Custom Event ile ilgili bir kaç ayrıntı - Hexo</title>
     <meta name="author" content="Ahmet ATAY">
     
     
     
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <meta name="description" content="VueJS 2 ile birlikte gelen yeniliklerin yanı sıra hali hazırdaki bir takım özellikler de kaldırıldı (depracated) ya da kullanım şekli değiştirildi diyebiliriz. Yeni versiondan etkilenen özelliklerden">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://atayahmet.com/2017/04/29/hello-world/index.html">
+<meta property="og:title" content="VueJS 2 Custom Event ile ilgili bir kaç ayrıntı">
+<meta property="og:url" content="https://atayahmet.com/2017/04/29/VueJS-Custom-Event-ile-ilgili-bir-kac-ayrinti/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="og:updated_time" content="2017-04-28T23:32:00.000Z">
+<meta property="og:description" content="VueJS 2 ile birlikte gelen yeniliklerin yanı sıra hali hazırdaki bir takım özellikler de kaldırıldı (depracated) ya da kullanım şekli değiştirildi diyebiliriz. Yeni versiondan etkilenen özelliklerden">
+<meta property="og:updated_time" content="2017-04-29T22:42:18.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="VueJS 2 Custom Event ile ilgili bir kaç ayrıntı">
+<meta name="twitter:description" content="VueJS 2 ile birlikte gelen yeniliklerin yanı sıra hali hazırdaki bir takım özellikler de kaldırıldı (depracated) ya da kullanım şekli değiştirildi diyebiliriz. Yeni versiondan etkilenen özelliklerden">
+<meta name="twitter:creator" content="@atayahmett">
     
     
         
@@ -189,11 +192,11 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            Hello World
+            VueJS 2 Custom Event ile ilgili bir kaç ayrıntı
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" datetime="2017-04-29T00:52:02+03:00">
+    <time itemprop="datePublished" datetime="2017-04-29T23:38:13+03:00">
 	
 		    Apr 29, 2017
     	
@@ -205,17 +208,18 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.</p>
-</blockquote>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+            <p>VueJS 2 ile birlikte gelen yeniliklerin yanı sıra hali hazırdaki bir takım özellikler de kaldırıldı (depracated) ya da kullanım şekli değiştirildi diyebiliriz. Yeni versiondan etkilenen özelliklerden biri de Custom Event’lerin kullanımlarıdır.<br><a id="more"></a><br>Şöyleki; VueJS version 1’de parent instance’tan child component’te kaydedilmiş bir event yada event’leri <code>$broadcast</code> edebiliyorduk diğer bir söylemle tetikleyebiliyorduk. Şuan da version 2’de bu özellik resmi olarak kaldırılmış durumda, yani parent’tan child componentteki bir event’leri çalıştıramıyoruz.</p>
+<p>Artık sadece child component’ten parent instance’taki event’leri çalıştırabiliyoruz. Burada yine bir kullanım dğeişikliği söz konusu, version 1’de <code>$dispatch</code> ile child component’ten parent’taki bir event tetikliyorken, version 2’de bu süreç artık tamamen event directive’leri üzerinden ilerliyor.</p>
+<p><strong><em>Parent-Child event yönetimi ile ilgili dökümanda bulunan ayrıntı:</em></strong><br><blockquote><p>You cannot use $on to listen to events emitted by children. You must use v-on directly in the template, as in the example below.</p>
+<footer><strong>VueJS 2 Document</strong><cite><a href="https://vuejs.org/v2/guide/components.html#Custom-Events" target="_blank" rel="external">Custom Events</a></cite></footer></blockquote></p>
+<p>Örnek:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"example"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">products</span> <span class="attr">v-on:alert</span>=<span class="string">"alerts"</span>&gt;</span><span class="tag">&lt;/<span class="name">products</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>Products Component:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Vue.component(<span class="string">'products'</span>, &#123;</div><div class="line">  <span class="attr">methods</span>: &#123;</div><div class="line">    getProducts() &#123;</div><div class="line">      <span class="keyword">this</span>.$emit(<span class="string">'alert'</span>, <span class="string">'Ürün bulunamadı'</span>);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>Product List Component (parent):</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">methods</span>: &#123;</div><div class="line">    alerts(message) &#123;</div><div class="line">      <span class="comment">// Ürün bulunamadı</span></div><div class="line">      <span class="built_in">console</span>.log(message);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">&#125;).$mount(<span class="string">'example'</span>);</div></pre></td></tr></table></figure>
+<p>Sonuç itibariyle</p>
+<p>Üzerinde çalıştığım projede parent instance’tan child component’teki bir event’i tetiklemem gerektiğinden bunu farklı bir yöntemle çözdüm. One-way binding yaparak child component’te tanımladığım prop’u VueJS watch ile izleyerek bir nevi event gibi kullanmış oldum. </p>
+<p>Yöntem çok doğru olmasada version 2’de bu durumu çözecek her hangi bir püf nokta bulamadım. Eğer bu durumu çözecek bir fikri olan birileri varsa yorumda bunu belirtebilirse beni ve ihtyacı olanları ihya edecektir.</p>
 
             
         </div>
@@ -250,20 +254,26 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://atayahmet.com/2017/04/29/hello-world/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://atayahmet.com/2017/04/29/VueJS-Custom-Event-ile-ilgili-bir-kac-ayrinti/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://atayahmet.com/2017/04/29/hello-world/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://atayahmet.com/2017/04/29/VueJS-Custom-Event-ile-ilgili-bir-kac-ayrinti/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://atayahmet.com/2017/04/29/hello-world/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://atayahmet.com/2017/04/29/VueJS-Custom-Event-ile-ilgili-bir-kac-ayrinti/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
         
         <li class="post-action">
             
@@ -277,6 +287,10 @@
 
 
         
+            
+                <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
             
         
     </div>
@@ -321,20 +335,26 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://atayahmet.com/2017/04/29/hello-world/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://atayahmet.com/2017/04/29/VueJS-Custom-Event-ile-ilgili-bir-kac-ayrinti/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://atayahmet.com/2017/04/29/hello-world/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://atayahmet.com/2017/04/29/VueJS-Custom-Event-ile-ilgili-bir-kac-ayrinti/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://atayahmet.com/2017/04/29/hello-world/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://atayahmet.com/2017/04/29/VueJS-Custom-Event-ile-ilgili-bir-kac-ayrinti/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
         
         <li class="post-action">
             
@@ -351,17 +371,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://atayahmet.com/2017/04/29/hello-world/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://atayahmet.com/2017/04/29/VueJS-Custom-Event-ile-ilgili-bir-kac-ayrinti/">
                 <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://atayahmet.com/2017/04/29/hello-world/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://atayahmet.com/2017/04/29/VueJS-Custom-Event-ile-ilgili-bir-kac-ayrinti/">
                 <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://atayahmet.com/2017/04/29/hello-world/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://atayahmet.com/2017/04/29/VueJS-Custom-Event-ile-ilgili-bir-kac-ayrinti/">
                 <i class="fa fa-twitter"></i><span>Share on Twitter</span>
             </a>
         </li>
@@ -407,6 +427,23 @@
 <script src="/assets/js/script-i4qo6jx6jji9fg0dftpya6ivemizsbow4fhow76d8dwpm7m1wbvi378ssumx.min.js"></script>
 <!--SCRIPTS END-->
 
+    
+        <script>
+             var disqus_config = function () {
+                 this.page.url = 'https://atayahmet.com/2017/04/29/VueJS-Custom-Event-ile-ilgili-bir-kac-ayrinti/';
+                 
+                    this.page.identifier = '2017/04/29/VueJS-Custom-Event-ile-ilgili-bir-kac-ayrinti/';
+                                  
+             };
+            (function() {
+                var d = document, s = d.createElement('script');
+                var disqus_shortname = 'ahmetatay';
+                s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
     
 
 
