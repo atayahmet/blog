@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
     
 <head>
     <meta charset="UTF-8">
@@ -89,7 +89,7 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-home"></i>
-                    <span class="sidebar-button-desc">Home</span>
+                    <span class="sidebar-button-desc">Anasayfa</span>
                 </a>
         </li>
         
@@ -101,7 +101,7 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
-                    <span class="sidebar-button-desc">Categories</span>
+                    <span class="sidebar-button-desc">Kategoriler</span>
                 </a>
         </li>
         
@@ -113,31 +113,19 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
-                    <span class="sidebar-button-desc">Tags</span>
-                </a>
-        </li>
-        
-            <li class="sidebar-button">
-                
-                    <a  class="sidebar-button-link "
-                         href="/all-archives"
-                        
-                    >
-                
-                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
-                    <span class="sidebar-button-desc">Archives</span>
+                    <span class="sidebar-button-desc">Etiketler</span>
                 </a>
         </li>
         
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link st-search-show-outputs"
-                         href="#search"
+                         href="/all-archives"
                         
                     >
                 
-                    <i class="sidebar-button-icon fa fa-lg fa-search"></i>
-                    <span class="sidebar-button-desc">Search</span>
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">Arşiv</span>
                 </a>
         </li>
         
@@ -149,13 +137,40 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-question"></i>
-                    <span class="sidebar-button-desc">About</span>
+                    <span class="sidebar-button-desc">Hakkımda</span>
                 </a>
         </li>
         
     </ul>
     
         <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://github.com/atayahmet" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+                    <span class="sidebar-button-desc">GitHub</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://twitter.com/atayahmett" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-twitter"></i>
+                    <span class="sidebar-button-desc">Twitter</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://www.linkedin.com/in/ahmet-atay-48688a53" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
+                    <span class="sidebar-button-desc">LinkedIn</span>
+                </a>
+        </li>
         
     </ul>
     
@@ -184,14 +199,18 @@
                         ">
                 <div id="tags-archives" class="main-content-wrap">
     <form id="filter-form" action="#">
-        <input name="tag" type="text" class="form-control input--xlarge" placeholder="Search tag" autofocus="autofocus">
+        <input name="tag" type="text" class="form-control input--xlarge" placeholder="Etiket ara" autofocus="autofocus">
     </form>
     <h4 class="archive-result text-color-base text-xlarge"
-        data-message-zero="no tag found"
-        data-message-one="1 tag found"
-        data-message-other="{n} tags found"></h4>
+        data-message-zero="etiket bulunamadı"
+        data-message-one="1 etiket bulundu"
+        data-message-other="{n} etiket bulundu"></h4>
 
         <section>
+        
+            <a class="tag tag--primary tag--small" href="#Custom Event-list" data-tag="custom event">
+                Custom Event
+            </a>
         
             <a class="tag tag--primary tag--small" href="#Custom Events-list" data-tag="custom events">
                 Custom Events
@@ -205,8 +224,27 @@
                 VueJS
             </a>
         
+            <a class="tag tag--primary tag--small" href="#hoisting-list" data-tag="hoisting">
+                hoisting
+            </a>
+        
+            <a class="tag tag--primary tag--small" href="#javascript-list" data-tag="javascript">
+                javascript
+            </a>
+        
     </section>
     <section class="boxes">
+        
+            <div id="Custom Event-list" class="archive box" data-tag="custom event">
+                <h4 class="archive-title">
+                    <a class="link-unstyled" href="/tags/Custom-Event">
+                        Custom Event (0)
+                    </a>
+                </h4>
+                <ul class="archive-posts">
+                    
+                </ul>
+            </div>
         
             <div id="Custom Events-list" class="archive box" data-tag="custom events">
                 <h4 class="archive-title">
@@ -221,7 +259,7 @@
                                 VueJS 2 Custom Event ile ilgili bir kaç ayrıntı
                             </a>
                             <span class="archive-post-date">
-                                 - apr 29, 2017
+                                 - 29 nisan 2017
                             </span>
                         </li>
                     
@@ -241,7 +279,7 @@
                                 VueJS 2 Custom Event ile ilgili bir kaç ayrıntı
                             </a>
                             <span class="archive-post-date">
-                                 - apr 29, 2017
+                                 - 29 nisan 2017
                             </span>
                         </li>
                     
@@ -261,7 +299,47 @@
                                 VueJS 2 Custom Event ile ilgili bir kaç ayrıntı
                             </a>
                             <span class="archive-post-date">
-                                 - apr 29, 2017
+                                 - 29 nisan 2017
+                            </span>
+                        </li>
+                    
+                </ul>
+            </div>
+        
+            <div id="hoisting-list" class="archive box" data-tag="hoisting">
+                <h4 class="archive-title">
+                    <a class="link-unstyled" href="/tags/hoisting">
+                        hoisting (1)
+                    </a>
+                </h4>
+                <ul class="archive-posts">
+                    
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2017/08/01/Javascript-te-Hoisting-nedir/">
+                                Javascript&#39;te Hoisting nedir?
+                            </a>
+                            <span class="archive-post-date">
+                                 - 01 ağustos 2017
+                            </span>
+                        </li>
+                    
+                </ul>
+            </div>
+        
+            <div id="javascript-list" class="archive box" data-tag="javascript">
+                <h4 class="archive-title">
+                    <a class="link-unstyled" href="/tags/javascript">
+                        javascript (1)
+                    </a>
+                </h4>
+                <ul class="archive-posts">
+                    
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2017/08/01/Javascript-te-Hoisting-nedir/">
+                                Javascript&#39;te Hoisting nedir?
+                            </a>
+                            <span class="archive-post-date">
+                                 - 01 ağustos 2017
                             </span>
                         </li>
                     
@@ -293,25 +371,16 @@
         
             <img id="about-card-picture" src="https://www.gravatar.com/avatar/1cd3edee98c564730b8d90ebedb2f3fc?s=110"/>
         
-            <h4 id="about-card-name">Ahmet ATAY</h4>
+            <h4 id="about-card-name">Ahmet ATAY <br /> Web Developer</h4>
         
-            <h5 id="about-card-bio"><p>author.bio</p>
+            <h5 id="about-card-bio"><p>1983 yılında İstanbul’un Şişli ilçesinde dünyaya geldim. Eğitim yıllarım boyunca çeşitli okullarda okudum ve bir süre sonra Erzurum Üniversitesinde; Bilgi Yönetimi Bölümünü bitirdim. Bilgisayarlara olan ilgim ve okuduğum bölümün etkisiyle yazılıma yöneldim. 2008 yılından itibaren web yazılım ile ilgili bir çok projede görev aldım ve halen projeler geliştirmekteyim.</p>
 </h5>
-        
-        
-            <h5 id="about-card-job">
-                <i class="fa fa-briefcase"></i>
-                <br/>
-                <p>authore.job</p>
-
-            </h5>
-        
         
     </div>
 </div>
 
         
-<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+<div id="cover" style="background-image:url('/assets/images/cover-v1.2.0.jpg');"></div>
     </body>
     <!--SCRIPTS-->
 <script src="/assets/js/script-i4qo6jx6jji9fg0dftpya6ivemizsbow4fhow76d8dwpm7m1wbvi378ssumx.min.js"></script>
