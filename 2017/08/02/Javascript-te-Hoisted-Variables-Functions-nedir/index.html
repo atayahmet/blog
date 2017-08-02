@@ -6,19 +6,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Ahmet ATAY">
-    <title>Etiket: hoisting - Ahmet ATAY</title>
+    <title>Javascript&#39;te Hoisted Variables &amp; Functions nedir? - Ahmet ATAY</title>
     <meta name="author" content="Ahmet ATAY">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <meta property="og:type" content="blog">
-<meta property="og:title" content="Ahmet ATAY">
-<meta property="og:url" content="https://atayahmet.com/tags/hoisting/index.html">
+    <meta name="description" content="Javascript’de yeni olanların ilk karşılaştıklarında kafalarını karıştırabilecek bir konu olan hoisted variables &amp;amp; functions konusu anlatmaya çalışacağım. Hosited nedir peki? Ne işe yarar? Nerelerd">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Javascript&#39;te Hoisted Variables &amp; Functions nedir?">
+<meta property="og:url" content="https://atayahmet.com/2017/08/02/Javascript-te-Hoisted-Variables-Functions-nedir/index.html">
 <meta property="og:site_name" content="Ahmet ATAY">
+<meta property="og:description" content="Javascript’de yeni olanların ilk karşılaştıklarında kafalarını karıştırabilecek bir konu olan hoisted variables &amp;amp; functions konusu anlatmaya çalışacağım. Hosited nedir peki? Ne işe yarar? Nerelerd">
+<meta property="og:updated_time" content="2017-08-02T00:39:32.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ahmet ATAY">
+<meta name="twitter:title" content="Javascript&#39;te Hoisted Variables &amp; Functions nedir?">
+<meta name="twitter:description" content="Javascript’de yeni olanların ilk karşılaştıklarında kafalarını karıştırabilecek bir konu olan hoisted variables &amp;amp; functions konusu anlatmaya çalışacağım. Hosited nedir peki? Ne işe yarar? Nerelerd">
 <meta name="twitter:creator" content="@atayahmett">
     
     
@@ -46,7 +50,7 @@
         
     
 
-<header id="header" data-behavior="1">
+<header id="header" data-behavior="3">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <h1 class="header-title">
         <a class="header-title-link" href="/ ">Ahmet ATAY</a>
@@ -68,7 +72,7 @@
 
     
 
-<nav id="sidebar" data-behavior="1">
+<nav id="sidebar" data-behavior="3">
     
         <div class="sidebar-profile">
             <a href="/#about">
@@ -192,46 +196,34 @@
 </nav>
 
             
-            <div id="main" data-behavior="1"
+            <div id="main" data-behavior="3"
                  class="
                         hasCoverMetaIn
                         ">
                 
-    
-
-<section class="postShorten-group main-content-wrap">
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
     
     
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/08/01/Javascript-te-Hoisting-nedir/">
-                            Javascript&#39;te Hoisting nedir?
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-08-01T20:29:09+03:00">
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            Javascript&#39;te Hoisted Variables &amp; Functions nedir?
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" datetime="2017-08-02T03:39:16+03:00">
 	
-		    01 Ağustos 2017
+		    02 Ağustos 2017
     	
     </time>
     
-        <span>/ </span>
-        
-    <a class="category-link" href="/categories/Javascript/">Javascript</a>
-
-
-    
 </div>
 
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <h1 id="Hoisted"><a href="#Hoisted" class="headerlink" title="Hoisted"></a>Hoisted</h1><p>Javascript’de yeni olanların ilk karşılaştıklarında kafalarını karıştırabilecek bir konu olan hoisted variables &amp; functions konusu anlatmaya çalışacağım. Hosited nedir peki? Ne işe yarar? Nerelerde karşımıza çıkar?</p>
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p>Javascript’de yeni olanların ilk karşılaştıklarında kafalarını karıştırabilecek bir konu olan hoisted variables &amp; functions konusu anlatmaya çalışacağım. Hosited nedir peki? Ne işe yarar? Nerelerde karşımıza çıkar?<br><a id="more"></a></p>
 <h2 id="Hoisted-Variables"><a href="#Hoisted-Variables" class="headerlink" title="Hoisted Variables:"></a>Hoisted Variables:</h2><p>Javascript’te değişkenlerimizi var, let ve const gibi türlerle tanımlarız (declare). Sonrasında bir değer atayarak değişkeni kullanıma hazır hale getiriz. İşte tam da burada değişkeni nerede tanımladığımızın çok büyük önemi vardır. </p>
 <p>Örnek verelim:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="string">'Merhaba'</span>;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(a); <span class="comment">// Merhaba</span></div></pre></td></tr></table></figure>
@@ -258,31 +250,81 @@
 <p>Hala daha kafanızda bu konu ile ilgili soru işaretleri var ise şöyle bir açıklama yapabilirim. Tarayıcılar yazdığımız kodları çalıştırmadan önce yorumlar ve hafızaya (memory) kaydeder. Daha sonra kodlar çalıştırılır.</p>
 <p>Yazının faydalı olması dileğiyle.</p>
 
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2017/08/01/Javascript-te-Hoisting-nedir/#post-footer" class="postShorten-excerpt_link link">
-                                Yorum yap ve paylaş
-                            </a>
-                        </p>
-                    
-                </div>
             
         </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
         
-    </article>
-    
-    <div class="pagination-bar">
-    <ul class="pagination">
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">ÖNCEKİ</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/04/29/VueJS-Custom-Event-ile-ilgili-bir-kac-ayrinti/" data-tooltip="VueJS 2 Custom Event ile ilgili bir kaç ayrıntı">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">SONRAKİ</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://atayahmet.com/2017/08/02/Javascript-te-Hoisted-Variables-Functions-nedir/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://atayahmet.com/2017/08/02/Javascript-te-Hoisted-Variables-Functions-nedir/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://atayahmet.com/2017/08/02/Javascript-te-Hoisted-Variables-Functions-nedir/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
         
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
         
-        <li class="pagination-number">şu anki sayfa 1 / toplam sayfa 1</li>
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
     </ul>
 </div>
 
-</section>
+
+        
+            
+                <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+            
+        
+    </div>
+</article>
+
 
 
                 <footer id="footer" class="main-content-wrap">
@@ -292,6 +334,89 @@
 </footer>
 
             </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">ÖNCEKİ</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/04/29/VueJS-Custom-Event-ile-ilgili-bir-kac-ayrinti/" data-tooltip="VueJS 2 Custom Event ile ilgili bir kaç ayrıntı">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">SONRAKİ</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://atayahmet.com/2017/08/02/Javascript-te-Hoisted-Variables-Functions-nedir/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://atayahmet.com/2017/08/02/Javascript-te-Hoisted-Variables-Functions-nedir/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://atayahmet.com/2017/08/02/Javascript-te-Hoisted-Variables-Functions-nedir/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://atayahmet.com/2017/08/02/Javascript-te-Hoisted-Variables-Functions-nedir/">
+                <i class="fa fa-google-plus"></i><span class="">Google Plus&#39;ta Paylaş</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://atayahmet.com/2017/08/02/Javascript-te-Hoisted-Variables-Functions-nedir/">
+                <i class="fa fa-facebook-official"></i><span>Facebook&#39;ta Paylaş</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://atayahmet.com/2017/08/02/Javascript-te-Hoisted-Variables-Functions-nedir/">
+                <i class="fa fa-twitter"></i><span>Twitter&#39;da Paylaş</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
             
         </div>
         
@@ -321,6 +446,25 @@
     <!--SCRIPTS-->
 <script src="/assets/js/script-i4qo6jx6jji9fg0dftpya6ivemizsbow4fhow76d8dwpm7m1wbvi378ssumx.min.js"></script>
 <!--SCRIPTS END-->
+
+    
+        <script>
+             var disqus_config = function () {
+                 this.page.url = 'https://atayahmet.com/2017/08/02/Javascript-te-Hoisted-Variables-Functions-nedir/';
+                 
+                    this.page.identifier = '2017/08/02/Javascript-te-Hoisted-Variables-Functions-nedir/';
+                                  
+             };
+            (function() {
+                var d = document, s = d.createElement('script');
+                var disqus_shortname = 'atayahmetcom';
+                s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
 
 
 
