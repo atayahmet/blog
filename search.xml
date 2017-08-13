@@ -6,7 +6,15 @@
       <title><![CDATA[Javascript'te Hoisted Variables & Functions nedir?]]></title>
       <url>/2017/08/02/Javascript-te-Hoisted-Variables-Functions-nedir/</url>
       <content type="html"><![CDATA[<p>Javascript’de yeni olanların ilk karşılaştıklarında kafalarını karıştırabilecek bir konu olan hoisted variables &amp; functions konusu anlatmaya çalışacağım. Hosited nedir peki? Ne işe yarar? Nerelerde karşımıza çıkar?<br><a id="more"></a></p>
-<h2 id="Hoisted-Variables"><a href="#Hoisted-Variables" class="headerlink" title="Hoisted Variables:"></a>Hoisted Variables:</h2><p>Javascript’te değişkenlerimizi var, let ve const gibi türlerle tanımlarız (declare). Sonrasında bir değer atayarak değişkeni kullanıma hazır hale getiriz. İşte tam da burada değişkeni nerede tanımladığımızın çok büyük önemi vardır. Bir çok yazılım dillerinde değişken tanımlama işlemi kod akışında en başta tanımlamayı gerektirir. Yada kullanımından önce değerinin atanmış olması gerekir.</p>
+<h2 id="Hoisted-Variables"><a href="#Hoisted-Variables" class="headerlink" title="Hoisted Variables:"></a>Hoisted Variables:</h2><hr>
+<p>title: Javascript’te Hoisted Variables &amp; Functions nedir?<br>date: 2017-08-02 03:39:16<br>tags:</p>
+<pre><code>- javascript
+- hoisting
+</code></pre><p>categories:</p>
+<pre><code>- Javascript
+</code></pre><hr>
+<p>Javascript’de yeni olanların ilk karşılaştıklarında kafalarını karıştırabilecek bir konu olan hoisted variables &amp; functions konusu anlatmaya çalışacağım. Hosited nedir peki? Ne işe yarar? Nerelerde karşımıza çıkar?<br><!-- more --></p>
+<h2 id="Hoisted-Variables-1"><a href="#Hoisted-Variables-1" class="headerlink" title="Hoisted Variables:"></a>Hoisted Variables:</h2><p>Javascript’te değişkenlerimizi <code>var</code>, <code>let</code> ve `const gibi türlerle tanımlarız (declare). Sonrasında bir değer atayarak değişkeni kullanıma hazır hale getiriz. İşte tam da burada değişkeni nerede tanımladığımızın çok büyük önemi vardır. Bir çok yazılım dillerinde değişken tanımlama işlemi kod akışında en başta tanımlamayı gerektirir. Yada kullanımından önce değerinin atanmış olması gerekir.</p>
 <p>Örnek verelim:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="string">'Merhaba'</span>;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(a); <span class="comment">// Merhaba</span></div></pre></td></tr></table></figure>
 <p>Normal şartlarda her zaman bir değişkeni yukarıdaki gibi tanımlayıp kullanırız.</p>
