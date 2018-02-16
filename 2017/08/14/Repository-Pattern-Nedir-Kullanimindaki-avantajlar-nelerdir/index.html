@@ -1,0 +1,498 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Ahmet ATAY">
+    <title>Repository Pattern Nedir? Kullanımındaki avantajlar nelerdir? - Ahmet ATAY</title>
+    <meta name="author" content="Ahmet ATAY">
+    
+    
+    
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <meta name="description" content="Repository Pattern büyük ölçekli projelerde tercih edilen design pattern mimarilerinden biridir.">
+<meta name="keywords" content="design pattern,data mapper,collection-like">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Repository Pattern Nedir? Kullanımındaki avantajlar nelerdir?">
+<meta property="og:url" content="https://atayahmet.com/2017/08/14/Repository-Pattern-Nedir-Kullanimindaki-avantajlar-nelerdir/index.html">
+<meta property="og:site_name" content="Ahmet ATAY">
+<meta property="og:description" content="Repository Pattern büyük ölçekli projelerde tercih edilen design pattern mimarilerinden biridir.">
+<meta property="og:updated_time" content="2017-08-14T22:01:55.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Repository Pattern Nedir? Kullanımındaki avantajlar nelerdir?">
+<meta name="twitter:description" content="Repository Pattern büyük ölçekli projelerde tercih edilen design pattern mimarilerinden biridir.">
+<meta name="twitter:creator" content="@atayahmett">
+    
+    
+        
+    
+    
+        <meta property="og:image" content="https://www.gravatar.com/avatar/1cd3edee98c564730b8d90ebedb2f3fc?s=640"/>
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-nuvue6sithwirecbhvw3dkaobiojqvtadsnhguwi7k04xklybw5djl1smadp.min.css">
+    <!--STYLES END-->
+    
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+        
+    
+
+<header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="/ ">Ahmet ATAY</a>
+    </h1>
+    
+        
+            <a  class="header-right-picture "
+                href="#about">
+        
+        
+            <img class="header-picture" src="https://www.gravatar.com/avatar/1cd3edee98c564730b8d90ebedb2f3fc?s=90"/>
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+    
+
+<nav id="sidebar" data-behavior="3">
+    
+        <div class="sidebar-profile">
+            <a href="/#about">
+                    <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/1cd3edee98c564730b8d90ebedb2f3fc?s=110"/>
+            </a>
+            <span class="sidebar-profile-name">Ahmet ATAY</span>
+        </div>
+    
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/ "
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                    <span class="sidebar-button-desc">Anasayfa</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-categories"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                    <span class="sidebar-button-desc">Kategoriler</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-tags"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                    <span class="sidebar-button-desc">Etiketler</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link st-search-show-outputs"
+                         href="/all-archives"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">Arşiv</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="#about"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                    <span class="sidebar-button-desc">Hakkımda</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://github.com/atayahmet" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+                    <span class="sidebar-button-desc">GitHub</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://twitter.com/atayahmett" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-twitter"></i>
+                    <span class="sidebar-button-desc">Twitter</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://www.linkedin.com/in/ahmet-atay-48688a53" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
+                    <span class="sidebar-button-desc">LinkedIn</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/atom.xml"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+                    <span class="sidebar-button-desc">RSS</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            Repository Pattern Nedir? Kullanımındaki avantajlar nelerdir?
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" datetime="2017-08-14T03:39:16+03:00">
+	
+		    14 Ağustos 2017
+    	
+    </time>
+    
+        <span>/ </span>
+        
+    <a class="category-link" href="/categories/Yazilar/">Yazılar</a>
+
+
+    
+</div>
+
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p>Repository Pattern büyük ölçekli projelerde tercih edilen design pattern mimarilerinden biridir.<br><a id="more"></a></p>
+<p>Repository Pattern büyük ölçekli projelerde tercih edilen design pattern mimarilerinden biridir. Domain Driven Design mimarisinin bir parçası olarak 2004 yılında ilk olarak duyurulmuştur. Veriye erişimi olan objeleri izole ederek (encapsulation) direkt erişime kapatır,  bu iletişim repository üzerinden yapılır. </p>
+<p>Repository Pattern tasarımının bir dil kısıtlaması yoktur. Her yazılım dilinde uygulanabilmektedir.</p>
+<p>Bu soyut kavramı kafamızda biraz daha somutlaştıralım ve örneklendirmeye çalışalım.</p>
+<p>Repository Pattern aslında bir veri soyutlama yöntemidir. Bu soyutlama işlemini gerçekleştirirken katmanlardan faydalanılmaktadır. </p>
+<p>Projede veritabanı işlemlerini  (Data Access Object) bir katmanda, veri erişim isteğinde bulunan kısım (Client) bir katmanda ve son olarak bu iki katman arasındaki iletişimi sağlayacak olan kısımı (Business Logic) bir katmanda düşünelim. Client veriye erişmek istediğinde repository katmanına başvurur. Repository katmanı istenilen veriyi Data Access Object katmanından alır ve tekrar Client katmanına döndürür. </p>
+<p>Özetle Repository Pattern yaşam döngüsü (Life Cycle) bu şekilde çalışmaktadır.</p>
+<p>Repository katmanını her hangi bir yazılım dilinde sınıf (class) olarak düşünüğümüzde, sıklıkla kullandığımız methodları bu sınıf için de ortak amaçlar için barındırırız. Böylelikle bize özel collection-like sınıfları sağlamaktadır. </p>
+<p>Metodlar:</p>
+<ul>
+<li>create()</li>
+<li>read()</li>
+<li>update()</li>
+<li>delete()</li>
+</ul>
+<p>Bu metodlar en çok kullanılanlarıdır. Tabi ki farklılaşabilir fakat kod tekrarına (dublication) sürüklenmemek için dikkat edilmelidir. Çünkü Repository Pattern  mimarisinin sağladığı en büyük avantajlardan biri kod tekrarının en aza indirme fırsatı vermesidir.</p>
+<p>PHP ile basit bir örnek yaparak prensipleri uygulayalım.</p>
+<p>İlk olarak Repository adında bir sınıf oluşturalım.</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Repository</span> </span>&#123;</div><div class="line">    <span class="keyword">protected</span> $model;</div><div class="line">    </div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">($model)</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">$this</span>-&gt;model = $model;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">create</span><span class="params">($data)</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;model-&gt;create($data);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">update</span><span class="params">($data, $id)</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;model-&gt;update($id, $data);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">delete</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;model-&gt;delete($id);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Yukarıda en çok kullanılan bazı metodları sınıfa ekledik. Sonra veritabanı işlemlerini yapacak olan modeli sınıf içine bağımlılık olarak gönderdik. </p>
+<blockquote>
+<p>Not: Model konusu farklı bir başlık konusu olduğundan detayına girilmeyecektir. Sadece veritabanı işlemlerini yapan ve veri nesnelerine erişimi sağlayan katman olarak anılacaktır.</p>
+</blockquote>
+<p>Şimdi de model sınıfımızı oluşturalım.</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ClientModel</span> <span class="keyword">extends</span> <span class="title">SomeORM</span> </span>&#123;</div><div class="line"></div><div class="line">  <span class="comment">// bu sınıf belki bir ORM sınıfına yada benzeri ilişkisel veri modelleme sınıflarına genişletilebilir. Belki kendinizin geliştirmiş olduğu bir ORM 'i entegre edebilirsiniz.</span></div><div class="line">  <span class="comment">// şimdilik sadece create(), update(), delete() methodlarının olduğunu varsayalım.</span></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Yukarıdaki basit sınıfları oluşturduktan sonra ClientModel’i repository sınıfına bağımlılık parametresi olarak gönderiyoruz.</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">$model = <span class="keyword">new</span> ClientModel;</div><div class="line"></div><div class="line">$clientRepository = <span class="keyword">new</span> Repository($model);</div></pre></td></tr></table></figure>
+<p>Client Model ile veri erişim işlemlerini yapabileceğimiz bir repository sınıfımız var. </p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$clientRepository-&gt;create($data);</div><div class="line"></div><div class="line">$clientRepository-&gt;update($data, $id);</div></pre></td></tr></table></figure>
+<p>İstersek bunu CategoryModel yapabilirdik. Bu ihtiyaçlarımıza göre çeşitlenecek bir gelişme.</p>
+<p>CategoryModel’imiz olduğunu düşünürsek:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$model = <span class="keyword">new</span> CategoryModel;</div><div class="line"></div><div class="line">$categoryRepository = <span class="keyword">new</span> Repository($model);</div></pre></td></tr></table></figure>
+<p>Daha da ileri taşıyacak olursak repository sınıflarınıda genişleterek (extends) daha spesifik kurgular yapabiliriz. Bu tamamen iş mantığı (business logic)’na bağlı bir durum.</p>
+<p><strong>Örnek:</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ClientRepository</span> <span class="keyword">extends</span> <span class="title">Repository</span> </span>&#123;</div><div class="line"></div><div class="line">  <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">($model)</span></span></div><div class="line">  &#123;</div><div class="line">      <span class="keyword">parent</span>::__contruct($model);</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">  <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">mutateAndCreate</span><span class="params">($data)</span></span></div><div class="line">  &#123;</div><div class="line">      <span class="keyword">unset</span>($data[<span class="string">'phone'</span>]);</div><div class="line">      </div><div class="line">      <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;create($data);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">$model = <span class="keyword">new</span> Client;</div><div class="line"></div><div class="line">$clientRepository = <span class="keyword">new</span> ClientRepository($model);</div><div class="line"></div><div class="line">$client-&gt;mutateAndCreate($data);</div></pre></td></tr></table></figure>
+<p>Yukarıda Repository sınıfını ClientRepository sınıfına genişlettiğimizi görüyoruz. Sonrasında $model katmanını bu sınıfa bağımlılık sınıfı olarak gönderiyoruz. </p>
+<p>Burda yeni oluşturduğumuz ClientRepository sınıfının yapılandırma (construct) metodunda, ana Repository sınıfının yapılandırma (construct) metodunu çağırdığımızı (parent::__construct()) görüyoruz. Çünkü ana Repository sınıfımız $model katmanına bağımlı olduğundan bu işlemi yapmamız gerekmektedir. </p>
+<p>Repository pattern mimarisinin avantajlarından bir tanesi sadece tek yönlü bağımlılığı olmasıdır. Bu bize bağımlılık yönetiminde forsatlar sunmaktadır.</p>
+<p>Kolay ve hızlıca anlaşılması için yukarıdaki örneği olabildiğince basit anlatmaya çalıştım. Çok daha gelişmiş örnekleri bir kaç arama ile rahatlıkla bulabilirsiniz.</p>
+
+            
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">ETİKETLER</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/collection-like/">collection-like</a> <a class="tag tag--primary tag--small t-link" href="/tags/data-mapper/">data mapper</a> <a class="tag tag--primary tag--small t-link" href="/tags/design-pattern/">design pattern</a>
+
+            </div>
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">ÖNCEKİ</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/08/02/Javascript-te-Hoisted-Variables-Functions-nedir/" data-tooltip="Javascript&#39;te Hoisted Variables &amp; Functions nedir?">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">SONRAKİ</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://atayahmet.com/2017/08/14/Repository-Pattern-Nedir-Kullanimindaki-avantajlar-nelerdir/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://atayahmet.com/2017/08/14/Repository-Pattern-Nedir-Kullanimindaki-avantajlar-nelerdir/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://atayahmet.com/2017/08/14/Repository-Pattern-Nedir-Kullanimindaki-avantajlar-nelerdir/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+            
+                <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2017 Ahmet ATAY. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">ÖNCEKİ</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/08/02/Javascript-te-Hoisted-Variables-Functions-nedir/" data-tooltip="Javascript&#39;te Hoisted Variables &amp; Functions nedir?">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">SONRAKİ</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://atayahmet.com/2017/08/14/Repository-Pattern-Nedir-Kullanimindaki-avantajlar-nelerdir/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://atayahmet.com/2017/08/14/Repository-Pattern-Nedir-Kullanimindaki-avantajlar-nelerdir/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://atayahmet.com/2017/08/14/Repository-Pattern-Nedir-Kullanimindaki-avantajlar-nelerdir/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://atayahmet.com/2017/08/14/Repository-Pattern-Nedir-Kullanimindaki-avantajlar-nelerdir/">
+                <i class="fa fa-google-plus"></i><span class="">Google Plus&#39;ta Paylaş</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://atayahmet.com/2017/08/14/Repository-Pattern-Nedir-Kullanimindaki-avantajlar-nelerdir/">
+                <i class="fa fa-facebook-official"></i><span>Facebook&#39;ta Paylaş</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://atayahmet.com/2017/08/14/Repository-Pattern-Nedir-Kullanimindaki-avantajlar-nelerdir/">
+                <i class="fa fa-twitter"></i><span>Twitter&#39;da Paylaş</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+            
+        </div>
+        
+
+
+    
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="https://www.gravatar.com/avatar/1cd3edee98c564730b8d90ebedb2f3fc?s=110"/>
+        
+            <h4 id="about-card-name">Ahmet ATAY <br /> Web Developer</h4>
+        
+            <h5 id="about-card-bio"><p>1983 yılında İstanbul’un Şişli ilçesinde dünyaya geldim. Eğitim yıllarım boyunca çeşitli okullarda okudum ve bir süre sonra Erzurum Üniversitesinde; Bilgi Yönetimi Bölümünü bitirdim. Bilgisayarlara olan ilgim ve okuduğum bölümün etkisiyle yazılıma yöneldim. 2008 yılından itibaren web yazılım ile ilgili bir çok projede görev aldım ve halen projeler geliştirmekteyim.</p>
+</h5>
+        
+    </div>
+</div>
+
+        
+<div id="cover" style="background-image:url('/assets/images/cover-v1.2.0.jpg');"></div>
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/script-i4qo6jx6jji9fg0dftpya6ivemizsbow4fhow76d8dwpm7m1wbvi378ssumx.min.js"></script>
+<!--SCRIPTS END-->
+
+    
+        <script>
+             var disqus_config = function () {
+                 this.page.url = 'https://atayahmet.com/2017/08/14/Repository-Pattern-Nedir-Kullanimindaki-avantajlar-nelerdir/';
+                 
+                    this.page.identifier = '2017/08/14/Repository-Pattern-Nedir-Kullanimindaki-avantajlar-nelerdir/';
+                                  
+             };
+            (function() {
+                var d = document, s = d.createElement('script');
+                var disqus_shortname = 'atayahmetcom';
+                s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+
+
+
+</html>
