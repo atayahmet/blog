@@ -1,11 +1,15 @@
 {
-  "name": "Jekyll-Gulp-Sass-Autoprefixer-Imagemin-BrowserSync",
+  "name": "blog",
   "version": "1.0.0",
-  "description": "A starter project for Jekyll",
+  "description": "My personal blog",
   "main": "index.js",
   "repository": "https://github.com/artemsheludko/Jekyll-Gulp-Sass-Autoprefixer-Imagemin-BrowserSync",
-  "author": "Artem Sheludko",
+  "author": "Ahmet ATAY",
   "license": "MIT",
+  "scripts": {
+    "start": "export JEKYLL_VERSION=3.8 && docker run --rm --volume=\"$PWD:/srv/jekyll\" -p 8080:4000 -it jekyll/jekyll:$JEKYLL_VERSION jekyll serve",
+    "build": "export JEKYLL_VERSION=3.8 && docker run --rm  --volume=\"$PWD:/srv/jekyll\"  -it jekyll/jekyll:$JEKYLL_VERSION jekyll build"
+  },
   "dependencies": {
     "browser-sync": "^2.18.13",
     "child_process": "^1.0.2",
