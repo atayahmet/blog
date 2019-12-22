@@ -2,11 +2,11 @@
 layout: post
 title: State Management Pattern nedir? Neden Kullanılır?
 date: 2018-02-16 10:00:00 +0300
-description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
+description: Geniş çaplı uygulamaların karmaşıklık seviyesi, projenin büyüme hızıyla doğru orantılıdır.
 img: state-management-pattern-diagram.png # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [Javascript, Design Pattern]
-categories: [tr]
+categories: [tr, javascript]
 ---
 
 Geniş çaplı uygulamaların karmaşıklık seviyesi, projenin büyüme hızıyla doğru orantılıdır. Özellikle proje javascript gibi bir dil ile geliştiriliyorsa `state management` gibi design pattern‘ların kullanımı zorunluluk hale geliyor.
