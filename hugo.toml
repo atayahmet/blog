@@ -1,0 +1,5 @@
+baseURL = 'https://atayahmet.github.io/blog/'
+languageCode = 'en-us'
+title = 'Ahmet Atay'
+theme = 'anubis2'
+publishDir = "docs"
